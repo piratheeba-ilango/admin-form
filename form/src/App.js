@@ -4,6 +4,7 @@ import { Button, Tabs } from "antd";
 import "antd/dist/antd.css";
 import { useState } from "react";
 import Login from "./Registration/Login";
+import Verify from "./Verification/verify";
 
 function App() {
   const [activeKey, setActiveKey] = useState("1");
@@ -37,7 +38,7 @@ function App() {
             <Login setActiveKey={setActiveKey} />
           </TabPane>
           <TabPane tab="Verification" key="3">
-            Content of Tab Pane 2
+            <Verify />
           </TabPane>
           <TabPane tab="Category" key="4">
             Content of Tab Pane 2

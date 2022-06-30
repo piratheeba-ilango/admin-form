@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import data from "./data";
 import "./index.css";
 import { Button } from "antd";
 import { CheckCircleTwoTone } from "@ant-design/icons";
 
+import axios from "axios";
+
 const Eligibility = ({ setActiveKey }) => {
   const tabChange = (value) => {
     setActiveKey(value);
   };
+
+  let a = "http://192.168.0.112:3003/parent/getparents";
+
+  const date = () => {
+    axios(a, {
+      method: "GET",
+    })
+      .then((resp) => {
+        console.log(resp);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
+  useEffect(() => {
+    date();
+  }, []);
   return (
     <div className="main">
       <div className="cards">
