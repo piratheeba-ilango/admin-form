@@ -5,6 +5,8 @@ import "antd/dist/antd.css";
 import { useState } from "react";
 import Login from "./Registration/Login";
 import Verify from "./Verification/verify";
+import AdmissionType from "./Categories/cate";
+import Thank from "./Thankyou/Thank";
 
 function App() {
   const [activeKey, setActiveKey] = useState("1");
@@ -20,7 +22,7 @@ function App() {
         <div
           style={{ display: "flex", justifyContent: "center", padding: "30px" }}
         >
-          <img src={"/logo-final.png"} alt="" style={{ width: "100px" }}></img>
+          <img src={"/dav.jpg"} alt="" style={{ width: "100px" }}></img>
         </div>
 
         <Tabs
@@ -41,7 +43,7 @@ function App() {
             <Verify />
           </TabPane>
           <TabPane tab="Category" key="4">
-            Content of Tab Pane 2
+            <AdmissionType setActiveKey={setActiveKey} />
           </TabPane>
           <TabPane tab="Ward Details" key="5">
             Content of Tab Pane 2
@@ -53,7 +55,7 @@ function App() {
             Content of Tab Pane 2
           </TabPane>
           <TabPane tab="Thank you" key="8">
-            Content of Tab Pane 2
+            <Thank />
           </TabPane>
         </Tabs>
       </div>

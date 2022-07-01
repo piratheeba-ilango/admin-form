@@ -18,7 +18,7 @@ const Eligibility = ({ setActiveKey }) => {
       method: "GET",
     })
       .then((resp) => {
-        console.log(resp);
+        console.log(resp.data);
       })
       .catch((error) => {
         alert(error);

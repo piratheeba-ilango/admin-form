@@ -1,0 +1,17 @@
+.title{
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    background: linear-gradient(70deg ,#ffffff 33%, #b842f1 33%);
+}
+.card1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width:60px;
+    padding: 20%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}

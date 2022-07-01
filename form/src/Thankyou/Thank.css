@@ -1,0 +1,24 @@
+li{
+    list-style: none;
+}
+.card8{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:#ffffff;
+    width:60%;
+    padding: 40px;
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.mains8  {
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    justify-content: center;
+    /* background-color: #6942cf; */
+    background: linear-gradient(70deg ,#ffffff 33%, #b842f1 33%);
+}
+

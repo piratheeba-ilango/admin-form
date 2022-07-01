@@ -1,15 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, message } from "antd";
+import axios from "axios";
 
 const Login = ({ setActiveKey }) => {
   const [form] = Form.useForm();
 
+  const createRecords = (values) => {
+    axios("http://192.168.0.112:3003/parent/createparents", {
+      method: "POST",
+      data: values,
+    }).then((resp) => {
+      console.log(resp);
+      if (resp.status === 200) {
+        message.success("added successfully");
+        form.resetFields();
+        setActiveKey("3");
+      }
+    });
+  };
+
   const onFinish = () => {
     console.log("hitted");
     form.validateFields().then((values) => {
-      console.log(values);
-      setActiveKey("3");
+      createRecords(values);
     });
   };
 
@@ -23,7 +37,7 @@ const Login = ({ setActiveKey }) => {
         <Form form={form} labelCol={{ span: 12 }} wrapperCol={{ span: 12 }}>
           <Form.Item
             label="Enter Your Email Id"
-            name="Enter Your Email Id"
+            name="mail"
             rules={[{ required: true, message: "Please input your Email Id!" }]}
           >
             <Input />
@@ -31,7 +45,7 @@ const Login = ({ setActiveKey }) => {
 
           <Form.Item
             label="Enter your Mobile Number"
-            name="Enter your Mobile Number"
+            name="mobile"
             rules={[
               { required: true, message: "Please input your Mobile Number!" },
             ]}
