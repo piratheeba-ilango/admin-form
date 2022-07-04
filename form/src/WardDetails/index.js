@@ -5,6 +5,7 @@ import "./index.css";
 import Upload from "../Component/Upload";
 
 export default function () {
+  console.log("added");
   return (
     <div className="title">
       <div className="ward">
