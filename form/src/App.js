@@ -6,7 +6,9 @@ import { useState } from "react";
 import Login from "./Registration/Login";
 import Verify from "./Verification/verify";
 import AdmissionType from "./Categories/cate";
+import WardDetails from "./WardDetails";
 import Thank from "./Thankyou/Thank";
+import Address from "./Address";
 
 function App() {
   const [activeKey, setActiveKey] = useState("1");
@@ -46,13 +48,13 @@ function App() {
             <AdmissionType setActiveKey={setActiveKey} />
           </TabPane>
           <TabPane tab="Ward Details" key="5">
-            Content of Tab Pane 2
+            <WardDetails />
           </TabPane>
           <TabPane tab="Address" key="6">
-            Content of Tab Pane 2
+            <Address />
           </TabPane>
           <TabPane tab="Parent Details" key="7">
-            Content of Tab Pane 2
+            <WardDetails />
           </TabPane>
           <TabPane tab="Thank you" key="8">
             <Thank />

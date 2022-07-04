@@ -13,7 +13,7 @@ const Login = ({ setActiveKey }) => {
     }).then((resp) => {
       console.log(resp);
       if (resp.status === 200) {
-        message.success("added successfully");
+        // message.success("added successfully");
         form.resetFields();
         setActiveKey("3");
       }
