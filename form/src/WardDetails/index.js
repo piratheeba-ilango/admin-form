@@ -1,6 +1,5 @@
 import React from "react";
 import { Form, Input, Select, DatePicker, Space, Button } from "antd";
-import { Row, Col } from "react-flexbox-grid";
 import "./index.css";
 import Upload from "../Component/Upload";
 
