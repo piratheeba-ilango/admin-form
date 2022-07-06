@@ -2,7 +2,10 @@ import React from "react";
 import { Button, Form, Input, InputNumber } from "antd";
 import "./index.css";
 
-export default function Address() {
+export default function Address({ setActiveKey }) {
+  const tabChange = (value) => {
+    setActiveKey(value);
+  };
   const [form] = Form.useForm();
 
   return (
@@ -21,31 +24,29 @@ export default function Address() {
             <div style={{ fontSize: "20px", margin: "30px" }}>
               Communication Address
             </div>
-            <div style={{ display: "flex" }}>
+            <div>
               <Form.Item
-                name="Address 1"
-                label={"Address 1"}
+                name="addrss_1"
                 rules={[
                   { required: true, message: "Please input your Address" },
                 ]}
                 className="Address"
               >
-                <Input />
+                <Input placeholder="Address 1" />
               </Form.Item>
 
               <Form.Item
-                name="Address 2"
-                label={"Address 2"}
+                name="address_2"
                 className="Address"
                 wrapperCol={{ span: 16 }}
               >
-                <Input />
+                <Input placeholder="Address 2" />
               </Form.Item>
             </div>
-
             <div
               style={{
                 display: "flex",
+                flexDirection: "column",
                 justifyContent: "center",
                 alignContent: "center",
               }}
@@ -59,38 +60,37 @@ export default function Address() {
               </Form.Item>
 
               <Form.Item wrapperCol={{ span: 20 }}>
-                <InputNumber placeholder="Pin Code" name="pinCode" />
+                <InputNumber placeholder="Pin Code" name="pincode1" />
               </Form.Item>
             </div>
 
             <div style={{ fontSize: "20px", margin: "30px" }}>
               Permanent Address
             </div>
-            <div style={{ display: "flex" }}>
+            <div>
               <Form.Item
-                name="Address 1"
-                label={"Address 1"}
+                name="addrss_1"
                 rules={[
                   { required: true, message: "Please input your Address" },
                 ]}
                 className="Address"
               >
-                <Input />
+                <Input placeholder="Address 1" />
               </Form.Item>
 
               <Form.Item
-                name="Address 2"
-                label={"Address 2"}
+                name="addrss_2"
                 className="Address"
                 wrapperCol={{ span: 16 }}
               >
-                <Input />
+                <Input placeholder="Address 2" />
               </Form.Item>
             </div>
 
             <div
               style={{
                 display: "flex",
+                flexDirection: "column",
                 justifyContent: "center",
                 alignContent: "center",
               }}
@@ -104,12 +104,20 @@ export default function Address() {
               </Form.Item>
 
               <Form.Item wrapperCol={{ span: 20 }}>
-                <InputNumber placeholder="Pin Code" name="pinCode" />
+                <InputNumber placeholder="Pin Code" name="pincode1" />
               </Form.Item>
             </div>
             <Button
               type="primary"
-              style={{ display: "flex", alignSelf: "flex-end", margin: "40px" }}
+              style={{
+                display: "flex",
+                alignSelf: "flex-end",
+                margin: "40px",
+                float: "right",
+              }}
+              onClick={() => {
+                tabChange("7");
+              }}
             >
               Next
             </Button>

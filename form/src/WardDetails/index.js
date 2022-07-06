@@ -1,9 +1,15 @@
+/* eslint-disable import/no-anonymous-default-export */
 import React from "react";
 import { Form, Input, Select, DatePicker, Space, Button } from "antd";
 import "./index.css";
 import Upload from "../Component/Upload";
+import { RightSquareOutlined } from "@ant-design/icons";
+const Option = { Select };
 
-export default function () {
+export default function ({ setActiveKey }) {
+  const tabChange = (value) => {
+    setActiveKey(value);
+  };
   console.log("added");
   return (
     <div className="title">
@@ -21,10 +27,10 @@ export default function () {
             }}
           >
             <div className="formChild">
-              <Form.Item name="firstName" rules={[{ required: true }]}>
+              <Form.Item name="first_name" rules={[{ required: true }]}>
                 <Input placeholder="first Name" />
               </Form.Item>
-              <Form.Item name="class" rules={[{ required: true }]}>
+              <Form.Item name="std" rules={[{ required: true }]}>
                 <Select placeholder="Std" allowClear>
                   <Option value="std">LKG</Option>
                   <Option value="std">UKG</Option>
@@ -48,17 +54,17 @@ export default function () {
               <Form.Item name="nationality" rules={[{ required: true }]}>
                 <Input placeholder="Nationality" />
               </Form.Item>
-              <Form.Item name="nationality" rules={[{ required: true }]}>
+              <Form.Item name="religion" rules={[{ required: true }]}>
                 <Select placeholder="Religion" allowClear>
-                  <Option value="male">Hindhu</Option>
-                  <Option value="female">Cheristian</Option>
-                  <Option value="other">Muslim</Option>
+                  <Option value="hindu">Hindu</Option>
+                  <Option value="christian">Christian</Option>
+                  <Option value="muslim">Muslim</Option>
                 </Select>
               </Form.Item>
               <Form.Item name="distance" rules={[{ required: true }]}>
                 <Input placeholder="Distance" />
               </Form.Item>
-              <Form.Item name="distance" rules={[{ required: true }]}>
+              <Form.Item name="ageproof" rules={[{ required: true }]}>
                 <div style={{ textAlign: "center" }}>
                   <p>
                     <span style={{ fontSize: "18px" }}>Age Proof</span>
@@ -74,7 +80,7 @@ export default function () {
               </Form.Item>
             </div>
             <div className="formChild">
-              <Form.Item name="lastName" rules={[{ required: true }]}>
+              <Form.Item name="last_name" rules={[{ required: true }]}>
                 <Input placeholder="Last Name" />
               </Form.Item>
               <Form.Item name="dob" rules={[{ required: true }]}>
@@ -82,7 +88,7 @@ export default function () {
                   <DatePicker placeholder="DOB" />
                 </Space>
               </Form.Item>
-              <Form.Item name="dob" rules={[{ required: true }]}>
+              <Form.Item name="blood_group" rules={[{ required: true }]}>
                 <Select placeholder="Blood Group" allowClear>
                   <Option value="std">A+</Option>
                   <Option value="std">A-</Option>
@@ -95,10 +101,10 @@ export default function () {
               <Form.Item name="motherTongue" rules={[{ required: true }]}>
                 <Input placeholder="Mother Tongue" />
               </Form.Item>
-              <Form.Item name="motherTongue" rules={[{ required: true }]}>
-                <Input placeholder="Mother Tongue" />
+              <Form.Item name="extra" rules={[{ required: true }]}>
+                <Input placeholder="Extra Curricular Activity" />
               </Form.Item>
-              <Form.Item name="sport" rules={[{ required: true }]}>
+              <Form.Item name="prof_in_sports" rules={[{ required: true }]}>
                 <Input placeholder="Proficiency in Sports" />
               </Form.Item>
               <Form.Item name="distance" rules={[{ required: true }]}>
@@ -127,7 +133,7 @@ export default function () {
               <Form.Item name="height" rules={[{ required: true }]}>
                 <Input placeholder="Height" prefix="CM" />
               </Form.Item>
-              <Form.Item name="aadharNumber" rules={[{ required: true }]}>
+              <Form.Item name="adhar" rules={[{ required: true }]}>
                 <Input placeholder="Aadhar Number" />
               </Form.Item>
               <Form.Item name="childEeds" rules={[{ required: true }]}>
@@ -168,7 +174,15 @@ export default function () {
             </div>
           </div>
           <div style={{ display: "flex", alignSelf: "flex-end" }}>
-            <Button type="primary">Next >></Button>
+            <Button
+              type="primary"
+              style={{ float: "right" }}
+              onClick={() => {
+                tabChange("6");
+              }}
+            >
+              Next
+            </Button>
           </div>
         </Form>
       </div>

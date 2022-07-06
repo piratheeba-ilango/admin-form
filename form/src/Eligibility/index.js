@@ -20,9 +20,7 @@ const Eligibility = ({ setActiveKey }) => {
       .then((resp) => {
         console.log(resp.data);
       })
-      .catch((error) => {
-        alert(error);
-      });
+      .catch((error) => {});
   };
   useEffect(() => {
     date();
