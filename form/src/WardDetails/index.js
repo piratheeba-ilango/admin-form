@@ -28,10 +28,10 @@ export default function ({ setActiveKey }) {
           >
             <div className="formChild">
               <Form.Item name="first_name" rules={[{ required: true }]}>
-                <Input placeholder="first Name" />
+                <Input placeholder="First Name" />
               </Form.Item>
               <Form.Item name="std" rules={[{ required: true }]}>
-                <Select placeholder="Std" allowClear>
+                <Select placeholder="Class" allowClear>
                   <Option value="std">LKG</Option>
                   <Option value="std">UKG</Option>
                   <Option value="std">1</Option>
@@ -61,9 +61,16 @@ export default function ({ setActiveKey }) {
                   <Option value="muslim">Muslim</Option>
                 </Select>
               </Form.Item>
-              <Form.Item name="distance" rules={[{ required: true }]}>
-                <Input placeholder="Distance" />
+              <Form.Item name="community" rules={[{ required: true }]}>
+                <Select placeholder="Community" allowClear>
+                  <Option value="male">Fc</Option>
+                  <Option value="male">BC</Option>
+                  <Option value="male">MBC</Option>
+                  <Option value="male">SC</Option>
+                  <Option value="male">Muslim BC</Option>
+                </Select>
               </Form.Item>
+
               <Form.Item name="ageproof" rules={[{ required: true }]}>
                 <div style={{ textAlign: "center" }}>
                   <p>
@@ -84,9 +91,9 @@ export default function ({ setActiveKey }) {
                 <Input placeholder="Last Name" />
               </Form.Item>
               <Form.Item name="dob" rules={[{ required: true }]}>
-                <Space direction="vertical">
-                  <DatePicker placeholder="DOB" />
-                </Space>
+                {/* <Space direction="vertical"> */}
+                <DatePicker placeholder="DOB" style={{ width: "100%" }} />
+                {/* </Space> */}
               </Form.Item>
               <Form.Item name="blood_group" rules={[{ required: true }]}>
                 <Select placeholder="Blood Group" allowClear>
@@ -101,13 +108,13 @@ export default function ({ setActiveKey }) {
               <Form.Item name="motherTongue" rules={[{ required: true }]}>
                 <Input placeholder="Mother Tongue" />
               </Form.Item>
-              <Form.Item name="extra" rules={[{ required: true }]}>
+              <Form.Item name="extra_curricular" rules={[{ required: true }]}>
                 <Input placeholder="Extra Curricular Activity" />
               </Form.Item>
               <Form.Item name="prof_in_sports" rules={[{ required: true }]}>
                 <Input placeholder="Proficiency in Sports" />
               </Form.Item>
-              <Form.Item name="distance" rules={[{ required: true }]}>
+              <Form.Item name="Applicantphoto" rules={[{ required: true }]}>
                 <div style={{ textAlign: "center" }}>
                   <p>
                     <span style={{ fontSize: "18px" }}>Applicant Photo</span>
@@ -136,7 +143,7 @@ export default function ({ setActiveKey }) {
               <Form.Item name="adhar" rules={[{ required: true }]}>
                 <Input placeholder="Aadhar Number" />
               </Form.Item>
-              <Form.Item name="childEeds" rules={[{ required: true }]}>
+              <Form.Item name="special_eads" rules={[{ required: true }]}>
                 <Input placeholder="Special Eeds" />
               </Form.Item>
               <Form.Item name="board" rules={[{ required: true }]}>
@@ -146,15 +153,10 @@ export default function ({ setActiveKey }) {
                   <Option value="other">SAMACHEER</Option>
                 </Select>
               </Form.Item>
-              <Form.Item name="community" rules={[{ required: true }]}>
-                <Select placeholder="Community" allowClear>
-                  <Option value="male">Fc</Option>
-                  <Option value="male">BC</Option>
-                  <Option value="male">MBC</Option>
-                  <Option value="male">SC</Option>
-                  <Option value="male">Muslim BC</Option>
-                </Select>
+              <Form.Item name="distance" rules={[{ required: true }]}>
+                <Input placeholder="Distance" />
               </Form.Item>
+
               <Form.Item name="distance" rules={[{ required: true }]}>
                 <div style={{ textAlign: "center" }}>
                   <p>

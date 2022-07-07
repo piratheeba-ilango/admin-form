@@ -1,5 +1,6 @@
 import React from "react";
 import "./Thank.css";
+import { Button } from "antd";
 const Thank = () => {
   return (
     <div className="mains8">
@@ -11,8 +12,14 @@ const Thank = () => {
         <p>Your submission has been received.</p>
         <p>A member of our team will contact you shortly.</p>
         <br></br>
-        <p>You can also download your filled application form here.</p>
+        <p>
+          You can also <a href="">download</a> your filled application form
+          here.
+        </p>
       </div>
+      <Button type="primary" style={{ float: "right" }}>
+        Print
+      </Button>
     </div>
   );
 };
